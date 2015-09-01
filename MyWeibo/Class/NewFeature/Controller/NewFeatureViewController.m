@@ -8,6 +8,7 @@
 
 #import "NewFeatureViewController.h"
 #import "UIView+Extension.h"
+#import "TabBarViewController.h"
 
 @interface NewFeatureViewController()<UIScrollViewDelegate>
 
@@ -36,16 +37,33 @@
     }
     
     UIImageView *lastImageView = [arrImageViews lastObject];
+    lastImageView.userInteractionEnabled = YES;//允许与用户进行交互
     UIButton *login = [[UIButton alloc]init];
-    login.centerX = self.view.width*0.5;
+//    login.centerX = self.view.width*0.5;
     login.centerY = self.view.height-200;
-    login.width = 100;
+    login.width = self.view.width;
     login.height = 50;
     [login setTitle:@"分享给大家" forState:UIControlStateNormal];
-    [login setBackgroundImage:[UIImage imageNamed:@"new_feature_share_false"] forState:UIControlStateNormal];
-    
-    [login setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [login setImage:[UIImage imageNamed:@"new_feature_share_false"] forState:UIControlStateNormal];
+    [login setImage:[UIImage imageNamed:@"new_feature_share_true"] forState:UIControlStateSelected];
+    [login addTarget:self action:@selector(shareButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [login setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [lastImageView addSubview:login];
+    
+    UIButton *startBtn = [[UIButton alloc]init];
+    startBtn.width=125;
+    startBtn.height=36;
+    startBtn.centerX = self.view.width*0.5;
+    startBtn.centerY = self.view.height-100;
+    [startBtn setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
+    [startBtn setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
+    [startBtn setTitle:@"开始微博" forState:UIControlStateNormal];
+    [startBtn addTarget:self action:@selector(startButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [lastImageView addSubview:startBtn];
+    
+    
+    
+    
     
     for(int i = 0;i<arrImageViews.count;i++)
     {
@@ -66,6 +84,21 @@
     pageController.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl = pageController;
     [self.view addSubview:pageController];
+}
+
+-(void)shareButtonClick:(UIButton *)button
+{
+    button.selected = !button.selected;
+}
+
+-(void)startButtonClick:(UIButton *)button
+{
+    TabBarViewController *tab = [[TabBarViewController alloc]init];
+    for(UIView *view in self.view.subviews)
+    {
+        [view removeFromSuperview];
+    }
+    [self.view addSubview:tab.view];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

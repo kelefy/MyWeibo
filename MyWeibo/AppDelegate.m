@@ -21,7 +21,7 @@
     //创建主窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController = [TabBarViewController new];//[[NewFeatureViewController alloc]init];
+    self.window.rootViewController = [NewFeatureViewController new];//[TabBarViewController new];//[[NewFeatureViewController alloc]init];
     
     [self.window makeKeyAndVisible];
     
