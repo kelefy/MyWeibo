@@ -14,6 +14,10 @@
 		CD21EE5B1B91C43200AFA0F5 /* MyWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD21EE5A1B91C43200AFA0F5 /* MyWeiboTests.m */; };
 		CD6B47681B93554B00F3F247 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B47671B93554B00F3F247 /* ProfileTableViewController.m */; };
 		CD6B476D1B93576200F3F247 /* NewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B476C1B93576200F3F247 /* NewFeatureViewController.m */; };
+		CDB866131B96DEA0003836F3 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB866121B96DEA0003836F3 /* AuthViewController.m */; };
+		CDBAC5711B9A0AC100C48709 /* AccessTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC5701B9A0AC100C48709 /* AccessTokenModel.m */; };
+		CDBAC5741B9A11A400C48709 /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC5731B9A11A400C48709 /* AccountTool.m */; };
+		CDDDBC8C1B9D621400EC5AF4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDDBC8B1B9D621400EC5AF4 /* User.m */; };
 		CDE082211B920C5F008A954C /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE082201B920C5F008A954C /* TabBarViewController.m */; };
 		CDE082241B920C95008A954C /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE082231B920C95008A954C /* NavigationViewController.m */; };
 		CDE082271B921004008A954C /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE082261B921004008A954C /* HomeTableViewController.m */; };
@@ -48,6 +52,14 @@
 		CD6B47671B93554B00F3F247 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileTableViewController.m; path = "Class/Profile(我)/Controller/ProfileTableViewController.m"; sourceTree = "<group>"; };
 		CD6B476B1B93576200F3F247 /* NewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewFeatureViewController.h; path = Class/NewFeature/Controller/NewFeatureViewController.h; sourceTree = "<group>"; };
 		CD6B476C1B93576200F3F247 /* NewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewFeatureViewController.m; path = Class/NewFeature/Controller/NewFeatureViewController.m; sourceTree = "<group>"; };
+		CDB866111B96DEA0003836F3 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthViewController.h; path = Class/OAuth/Controller/AuthViewController.h; sourceTree = "<group>"; };
+		CDB866121B96DEA0003836F3 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthViewController.m; path = Class/OAuth/Controller/AuthViewController.m; sourceTree = "<group>"; };
+		CDBAC56F1B9A0AC100C48709 /* AccessTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessTokenModel.h; path = Class/OAuth/Model/AccessTokenModel.h; sourceTree = "<group>"; };
+		CDBAC5701B9A0AC100C48709 /* AccessTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessTokenModel.m; path = Class/OAuth/Model/AccessTokenModel.m; sourceTree = "<group>"; };
+		CDBAC5721B9A11A400C48709 /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountTool.h; path = Class/OAuth/Tools/AccountTool.h; sourceTree = "<group>"; };
+		CDBAC5731B9A11A400C48709 /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountTool.m; path = Class/OAuth/Tools/AccountTool.m; sourceTree = "<group>"; };
+		CDDDBC8A1B9D621400EC5AF4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = "Class/Home(首页)/Model/User.h"; sourceTree = "<group>"; };
+		CDDDBC8B1B9D621400EC5AF4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = "Class/Home(首页)/Model/User.m"; sourceTree = "<group>"; };
 		CDE0821F1B920C5F008A954C /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = "Class/Main(主要)/Controller/TabBarViewController.h"; sourceTree = "<group>"; };
 		CDE082201B920C5F008A954C /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = "Class/Main(主要)/Controller/TabBarViewController.m"; sourceTree = "<group>"; };
 		CDE082221B920C95008A954C /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = "Class/Main(主要)/Controller/NavigationViewController.h"; sourceTree = "<group>"; };
@@ -224,9 +236,47 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		CDB8660F1B96DE5A003836F3 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAC56E1B9A0A7A00C48709 /* Model */,
+				CDBAC56D1B9A0A5E00C48709 /* Tools */,
+				CDB866101B96DE68003836F3 /* Controller */,
+			);
+			name = OAuth;
+			sourceTree = "<group>";
+		};
+		CDB866101B96DE68003836F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDB866111B96DEA0003836F3 /* AuthViewController.h */,
+				CDB866121B96DEA0003836F3 /* AuthViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CDBAC56D1B9A0A5E00C48709 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAC5721B9A11A400C48709 /* AccountTool.h */,
+				CDBAC5731B9A11A400C48709 /* AccountTool.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		CDBAC56E1B9A0A7A00C48709 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAC56F1B9A0AC100C48709 /* AccessTokenModel.h */,
+				CDBAC5701B9A0AC100C48709 /* AccessTokenModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CDE082131B920577008A954C /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				CDB8660F1B96DE5A003836F3 /* OAuth */,
 				CD6B47691B9356F200F3F247 /* NewFeature */,
 				CDE082171B9205C3008A954C /* MessageCenter(消息) */,
 				CDE082161B9205B2008A954C /* Home(首页) */,
@@ -280,6 +330,8 @@
 		CDE082181B920640008A954C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CDDDBC8A1B9D621400EC5AF4 /* User.h */,
+				CDDDBC8B1B9D621400EC5AF4 /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -464,9 +516,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDE0823A1B9323B9008A954C /* UIView+Extension.m in Sources */,
+				CDBAC5741B9A11A400C48709 /* AccountTool.m in Sources */,
 				CDE0822D1B92186D008A954C /* MessageCenterTableViewController.m in Sources */,
 				CDE082211B920C5F008A954C /* TabBarViewController.m in Sources */,
 				CD6B47681B93554B00F3F247 /* ProfileTableViewController.m in Sources */,
+				CDDDBC8C1B9D621400EC5AF4 /* User.m in Sources */,
+				CDB866131B96DEA0003836F3 /* AuthViewController.m in Sources */,
 				CDE082331B922E9D008A954C /* DiscoverTableViewController.m in Sources */,
 				CDE082271B921004008A954C /* HomeTableViewController.m in Sources */,
 				CD21EE441B91C43200AFA0F5 /* AppDelegate.m in Sources */,
@@ -474,6 +529,7 @@
 				CD21EE411B91C43200AFA0F5 /* main.m in Sources */,
 				CDE082361B93218F008A954C /* MyTabbar.m in Sources */,
 				CD6B476D1B93576200F3F247 /* NewFeatureViewController.m in Sources */,
+				CDBAC5711B9A0AC100C48709 /* AccessTokenModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "NewFeatureViewController.h"
 #import "UIView+Extension.h"
 #import "TabBarViewController.h"
+#import "AuthViewController.h"
 
 @interface NewFeatureViewController()<UIScrollViewDelegate>
 
@@ -93,12 +94,10 @@
 
 -(void)startButtonClick:(UIButton *)button
 {
-    TabBarViewController *tab = [[TabBarViewController alloc]init];
-    for(UIView *view in self.view.subviews)
-    {
-        [view removeFromSuperview];
-    }
-    [self.view addSubview:tab.view];
+//    TabBarViewController *tab = [[TabBarViewController alloc]init];
+    AuthViewController *auth = [[AuthViewController alloc]init];
+    UIWindow *windows = [UIApplication sharedApplication].keyWindow;
+    windows.rootViewController = auth;
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "TabBarViewController.h"
 #import "NewFeatureViewController.h"
+#import "AccountTool.h"
+#import "AccessTokenModel.h"
+#import "AuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +24,52 @@
     //创建主窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController = [NewFeatureViewController new];//[TabBarViewController new];//[[NewFeatureViewController alloc]init];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *pathUserinfo = [paths lastObject];
+    pathUserinfo = [pathUserinfo stringByAppendingPathComponent:@"userinfo.plist"];
+    AccessTokenModel *model = [AccountTool accountWithFile];
+    if(model)
+    {
+        //获取当前版本
+        NSDictionary *dic = [NSBundle mainBundle].infoDictionary;
+        NSMutableDictionary *versionDictionary = [NSMutableDictionary dictionary];
+        versionDictionary[@"CFBundleVersion"] = dic[@"CFBundleVersion"];
+        
+        NSString *path = [NSString stringWithFormat:@"%@/%@",NSHomeDirectory(),@"Documents/version.plist"];
+        NSLog(@"%@",path);
+        NSMutableDictionary *oldVersionDic;
+        if([[NSFileManager defaultManager]fileExistsAtPath:path])
+        {
+            oldVersionDic = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        }
+        else
+        {
+            oldVersionDic = [NSMutableDictionary dictionary];
+        }
+        NSString *strOldVersion = oldVersionDic[@"version"];
+        if(![strOldVersion isEqual:dic[@"CFBundleVersion"]])
+        {
+            oldVersionDic[@"version"] = dic[@"CFBundleVersion"];
+            NSLog(@"版本不同");
+            [oldVersionDic writeToFile:path atomically:NO];
+            self.window.rootViewController = [NewFeatureViewController new];
+        }
+        else
+        {
+            NSLog(@"版本相同");
+            self.window.rootViewController = [TabBarViewController new];
+        }
+
+//        NSLog(@"%@",pathUserinfo);
+        
+    }
+    else
+    {
+        self.window.rootViewController = [AuthViewController new];
+    }
+    
+    
+    //[TabBarViewController new];//[[NewFeatureViewController alloc]init];
     
     [self.window makeKeyAndVisible];
     
