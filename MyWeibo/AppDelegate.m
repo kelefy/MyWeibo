@@ -30,6 +30,9 @@
     AccessTokenModel *model = [AccountTool accountWithFile];
     if(model)
     {
+#ifdef DEBUG
+        NSLog(@"%@",model);
+#endif
         //获取当前版本
         NSDictionary *dic = [NSBundle mainBundle].infoDictionary;
         NSMutableDictionary *versionDictionary = [NSMutableDictionary dictionary];

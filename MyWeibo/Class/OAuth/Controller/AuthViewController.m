@@ -56,13 +56,21 @@
         request.HTTPMethod = @"POST";
         NSString *paramers = [NSString stringWithFormat: @"client_id=257987400&client_secret=943fa8155fa7ba77b61f57fde8d7167a&grant_type=authorization_code&code=%@&redirect_uri=http://www.wxchina.com",code];
         [request setHTTPBody:[paramers dataUsingEncoding:NSUTF8StringEncoding]];
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSData *revData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:revData options:NSJSONReadingMutableLeaves error:nil];
+        
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             AccessTokenModel *account = [AccessTokenModel accessTokenModelWithDict:dic];
             [AccountTool writeAccountToFile:account];
-            
-        });
+        }];
+        
+        
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            NSData *revData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:revData options:NSJSONReadingMutableLeaves error:nil];
+//            AccessTokenModel *account = [AccessTokenModel accessTokenModelWithDict:dic];
+//            [AccountTool writeAccountToFile:account];
+//            
+//        });
         
     }
     return YES;

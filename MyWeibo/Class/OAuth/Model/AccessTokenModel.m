@@ -48,4 +48,9 @@
     return self;
 }
 
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"access_token = %@\nexpires_in=%@\nremind_in=%@\nuid=%@",self.access_token,self.expires_in,self.remind_in,self.uid];
+}
+
 @end

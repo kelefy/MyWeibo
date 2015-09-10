@@ -71,8 +71,8 @@
         NSData *revData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         if(revData)
         {
-//            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:revData options:NSJSONReadingMutableLeaves error:nil];
-//            NSLog(@"%@",dic);
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:revData options:NSJSONReadingMutableLeaves error:nil];
+            NSLog(@"%@",dic);
         }
     });
 }

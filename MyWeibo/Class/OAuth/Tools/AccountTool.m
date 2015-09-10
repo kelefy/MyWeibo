@@ -23,6 +23,9 @@
     NSString *path = [paths lastObject];
     path = [path stringByAppendingPathComponent:@"userinfo.plist"];
     [NSKeyedArchiver archiveRootObject:model toFile:path];
+#ifdef DEBUG
+    NSLog(@"save file : %@",path);
+#endif
 }
 
 +(id)accountWithFile
