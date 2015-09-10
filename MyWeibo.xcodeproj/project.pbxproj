@@ -11,7 +11,6 @@
 		CD21EE441B91C43200AFA0F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD21EE431B91C43200AFA0F5 /* AppDelegate.m */; };
 		CD21EE4C1B91C43200AFA0F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD21EE4B1B91C43200AFA0F5 /* Images.xcassets */; };
 		CD21EE4F1B91C43200AFA0F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD21EE4D1B91C43200AFA0F5 /* LaunchScreen.xib */; };
-		CD21EE5B1B91C43200AFA0F5 /* MyWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD21EE5A1B91C43200AFA0F5 /* MyWeiboTests.m */; };
 		CD6B47681B93554B00F3F247 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B47671B93554B00F3F247 /* ProfileTableViewController.m */; };
 		CD6B476D1B93576200F3F247 /* NewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6B476C1B93576200F3F247 /* NewFeatureViewController.m */; };
 		CDB866131B96DEA0003836F3 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB866121B96DEA0003836F3 /* AuthViewController.m */; };
@@ -27,16 +26,6 @@
 		CDE0823A1B9323B9008A954C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE082391B9323B9008A954C /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CD21EE551B91C43200AFA0F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD21EE331B91C43200AFA0F5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD21EE3A1B91C43200AFA0F5;
-			remoteInfo = MyWeibo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		CD21EE3B1B91C43200AFA0F5 /* MyWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD21EE3F1B91C43200AFA0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,7 +34,6 @@
 		CD21EE431B91C43200AFA0F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CD21EE4B1B91C43200AFA0F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CD21EE4E1B91C43200AFA0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CD21EE541B91C43200AFA0F5 /* MyWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD21EE591B91C43200AFA0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD21EE5A1B91C43200AFA0F5 /* MyWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWeiboTests.m; sourceTree = "<group>"; };
 		CD6B47661B93554B00F3F247 /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileTableViewController.h; path = "Class/Profile(我)/Controller/ProfileTableViewController.h"; sourceTree = "<group>"; };
@@ -84,13 +72,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD21EE511B91C43200AFA0F5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				CD21EE3B1B91C43200AFA0F5 /* MyWeibo.app */,
-				CD21EE541B91C43200AFA0F5 /* MyWeiboTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -436,24 +416,6 @@
 			productReference = CD21EE3B1B91C43200AFA0F5 /* MyWeibo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD21EE531B91C43200AFA0F5 /* MyWeiboTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD21EE611B91C43200AFA0F5 /* Build configuration list for PBXNativeTarget "MyWeiboTests" */;
-			buildPhases = (
-				CD21EE501B91C43200AFA0F5 /* Sources */,
-				CD21EE511B91C43200AFA0F5 /* Frameworks */,
-				CD21EE521B91C43200AFA0F5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD21EE561B91C43200AFA0F5 /* PBXTargetDependency */,
-			);
-			name = MyWeiboTests;
-			productName = MyWeiboTests;
-			productReference = CD21EE541B91C43200AFA0F5 /* MyWeiboTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -465,10 +427,6 @@
 				TargetAttributes = {
 					CD21EE3A1B91C43200AFA0F5 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					CD21EE531B91C43200AFA0F5 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = CD21EE3A1B91C43200AFA0F5;
 					};
 				};
 			};
@@ -486,7 +444,6 @@
 			projectRoot = "";
 			targets = (
 				CD21EE3A1B91C43200AFA0F5 /* MyWeibo */,
-				CD21EE531B91C43200AFA0F5 /* MyWeiboTests */,
 			);
 		};
 /* End PBXProject section */
@@ -498,13 +455,6 @@
 			files = (
 				CD21EE4F1B91C43200AFA0F5 /* LaunchScreen.xib in Resources */,
 				CD21EE4C1B91C43200AFA0F5 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD21EE521B91C43200AFA0F5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,23 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD21EE501B91C43200AFA0F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD21EE5B1B91C43200AFA0F5 /* MyWeiboTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CD21EE561B91C43200AFA0F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD21EE3A1B91C43200AFA0F5 /* MyWeibo */;
-			targetProxy = CD21EE551B91C43200AFA0F5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CD21EE4D1B91C43200AFA0F5 /* LaunchScreen.xib */ = {
@@ -599,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -637,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -665,40 +599,6 @@
 			};
 			name = Release;
 		};
-		CD21EE621B91C43200AFA0F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MyWeiboTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyWeibo.app/MyWeibo";
-			};
-			name = Debug;
-		};
-		CD21EE631B91C43200AFA0F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MyWeiboTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyWeibo.app/MyWeibo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -716,15 +616,6 @@
 			buildConfigurations = (
 				CD21EE5F1B91C43200AFA0F5 /* Debug */,
 				CD21EE601B91C43200AFA0F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD21EE611B91C43200AFA0F5 /* Build configuration list for PBXNativeTarget "MyWeiboTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD21EE621B91C43200AFA0F5 /* Debug */,
-				CD21EE631B91C43200AFA0F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
